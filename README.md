@@ -78,8 +78,6 @@ document_lakehouse/
 └── requirements.txt    # Python dependencies
 ```
 
-## For Portfolio
-
 This project demonstrates:
 - **Data Engineering**: ETL pipeline design
 - **GenAI Integration**: Multimodal LLM usage
