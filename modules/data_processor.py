@@ -21,7 +21,7 @@ def export_to_csv(data: list) -> bytes:
 
 def export_to_parquet(data: list) -> bytes:
     """
-    Export data to Parquet format.
+    Export data to Parquet format using DuckDB (no pyarrow dependency).
     
     Args:
         data: List of dictionaries to export
@@ -29,10 +29,40 @@ def export_to_parquet(data: list) -> bytes:
     Returns:
         bytes: Parquet data as bytes
     """
+    import duckdb
+    
+    # Create an in-memory DuckDB connection
+    con = duckdb.connect(database=':memory:')
+    
+    # Create DataFrame from data
     df = pd.DataFrame(data)
-    buffer = io.BytesIO()
-    df.to_parquet(buffer, index=False)
-    return buffer.getvalue()
+    
+    # Register DataFrame as a view
+    con.register('df_view', df)
+    
+    # Use DuckDB to copy to parquet in memory
+    # We write to a temporary file because DuckDB COPY TO requires a file path
+    # But we can use a BytesIO buffer if we use the Python API's fetch_arrow_table (requires pyarrow)
+    # OR we can write to a temp file and read it back.
+    # Given the constraints, writing to a temp file is safest without pyarrow.
+    
+    import tempfile
+    import os
+    
+    with tempfile.NamedTemporaryFile(delete=False, suffix='.parquet') as tmp:
+        tmp_path = tmp.name
+    
+    try:
+        con.execute(f"COPY (SELECT * FROM df_view) TO '{tmp_path}' (FORMAT PARQUET)")
+        
+        with open(tmp_path, 'rb') as f:
+            parquet_bytes = f.read()
+            
+        return parquet_bytes
+    finally:
+        con.close()
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
 
 
 def validate_schema(schema: list) -> tuple[bool, str]:

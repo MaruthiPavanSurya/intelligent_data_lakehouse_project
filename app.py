@@ -286,11 +286,16 @@ with tab_ingest:
         # Action buttons
         col_action1, col_action2, col_action3 = st.columns(3)
         
+        # Check if cleansing is required
+        has_issues = len(result.get("issues", [])) > 0
+        
         with col_action1:
             if st.button(
                 "Approve & Load to Lakehouse",
                 type="primary",
-                use_container_width=True
+                use_container_width=True,
+                disabled=has_issues,
+                help="Fix data quality issues before loading" if has_issues else None
             ):
                 with st.spinner("Loading data..."):
                     try:
@@ -318,7 +323,9 @@ with tab_ingest:
                         data=csv,
                         file_name=f"{result.get('table_name', 'data')}.csv",
                         mime="text/csv",
-                        use_container_width=True
+                        use_container_width=True,
+                        disabled=has_issues,
+                        help="Fix data quality issues before downloading" if has_issues else None
                     )
                 except:
                     pass
@@ -333,7 +340,9 @@ with tab_ingest:
                         data=parquet,
                         file_name=f"{result.get('table_name', 'data')}.parquet",
                         mime="application/octet-stream",
-                        use_container_width=True
+                        use_container_width=True,
+                        disabled=has_issues,
+                        help="Fix data quality issues before downloading" if has_issues else None
                     )
                 except:
                     pass
