@@ -49,8 +49,8 @@ graph TD
     E --> G[DuckDB Hybrid Storage]
     G --> H[Multi-Table AI Analyst]
     G --> I[Lakehouse Management]
-    I --> J[Natural Language to SQL]
-    I --> K[Plotly Visualization]
+    H --> J[Natural Language to SQL]
+    H --> K[Plotly Visualization]
 ```
 
 ## 📂 Project Structure
