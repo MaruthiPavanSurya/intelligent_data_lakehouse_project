@@ -45,11 +45,12 @@ graph TD
     C -->|Yes| D[Auto-Fix or Manual Edit]
     C -->|No| E[Schema Refinement]
     D --> E
-    E --> F[DuckDB Hybrid Storage]
-    F --> G[Multi-Table AI Analyst]
-    F --> H[Lakehouse Management]
-    G --> I[Natural Language to SQL]
-    G --> J[Plotly Visualization]
+    E --> F[Download cleansed Data file]
+    E --> G[DuckDB Hybrid Storage]
+    G --> H[Multi-Table AI Analyst]
+    G --> I[Lakehouse Management]
+    I --> J[Natural Language to SQL]
+    I --> K[Plotly Visualization]
 ```
 
 ## 📂 Project Structure
