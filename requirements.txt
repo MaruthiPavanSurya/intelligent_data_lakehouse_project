@@ -1,0 +1,8 @@
+streamlit
+pillow
+duckdb
+pandas
+langchain-google-genai
+python-dotenv
+plotly
+lxml

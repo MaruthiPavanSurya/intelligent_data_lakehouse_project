@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+
+# Database files
+*.db
+lakehouse.db
+
+# Environment variables
+.env
+
+# Generated samples
+sample_*.jpg
+sample_*.csv
+sample_*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+

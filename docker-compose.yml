@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  document-lakehouse:
+    build: .
+    container_name: intelligent-lakehouse
+    ports:
+      - "8501:8501"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GEMINI_MODEL_NAME=${GEMINI_MODEL_NAME:-gemini-1.5-flash}
+    volumes:
+      - ./lakehouse.db:/app/lakehouse.db
+      - ./sample_invoice.jpg:/app/sample_invoice.jpg
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
