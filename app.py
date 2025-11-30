@@ -40,7 +40,8 @@ apply_custom_css()
 # ============================================================================
 # INITIALIZATION
 # ============================================================================
-
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+GEMINI_MODEL_NAME = st.secrets["GEMINI_MODEL_NAME"]
 # Check API Key
 if not GOOGLE_API_KEY:
     st.error("`GOOGLE_API_KEY` not found. Please add it to `.env` file.")
