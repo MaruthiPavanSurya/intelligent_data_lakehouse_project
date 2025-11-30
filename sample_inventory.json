@@ -1,0 +1,122 @@
+[
+  {
+    "item_id": "SKU-1000",
+    "details": {
+      "name": "Widget 0",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse B",
+      "quantity": 36
+    },
+    "last_audit": "2025-11-29T17:27:03.931593"
+  },
+  {
+    "item_id": "SKU-1001",
+    "details": {
+      "name": "Widget 1",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 244
+    },
+    "last_audit": "2025-11-29T17:27:03.931612"
+  },
+  {
+    "item_id": "SKU-1002",
+    "details": {
+      "name": "Widget 2",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 399
+    },
+    "last_audit": "2025-11-29T17:27:03.931617"
+  },
+  {
+    "item_id": "SKU-1003",
+    "details": {
+      "name": "Widget 3",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 237
+    },
+    "last_audit": "2025-11-29T17:27:03.931621"
+  },
+  {
+    "item_id": "SKU-1004",
+    "details": {
+      "name": "Widget 4",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Store 1",
+      "quantity": 437
+    },
+    "last_audit": "2025-11-29T17:27:03.931624"
+  },
+  {
+    "item_id": "SKU-1005",
+    "details": {
+      "name": "Widget 5",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 377
+    },
+    "last_audit": "2025-11-29T17:27:03.931628"
+  },
+  {
+    "item_id": "SKU-1006",
+    "details": {
+      "name": "Widget 6",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 445
+    },
+    "last_audit": "2025-11-29T17:27:03.931632"
+  },
+  {
+    "item_id": "SKU-1007",
+    "details": {
+      "name": "Widget 7",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Store 1",
+      "quantity": 380
+    },
+    "last_audit": "2025-11-29T17:27:03.931635"
+  },
+  {
+    "item_id": "SKU-1008",
+    "details": {
+      "name": "Widget 8",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 25
+    },
+    "last_audit": "2025-11-29T17:27:03.931638"
+  },
+  {
+    "item_id": "SKU-1009",
+    "details": {
+      "name": "Widget 9",
+      "category": "Hardware"
+    },
+    "stock": {
+      "location": "Warehouse A",
+      "quantity": 390
+    },
+    "last_audit": "2025-11-29T17:27:03.931641"
+  }
+]

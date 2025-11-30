@@ -16,11 +16,6 @@ lakehouse.db
 # Environment variables
 .env
 
-# Generated samples
-sample_*.jpg
-sample_*.csv
-sample_*.json
-
 # IDE
 .vscode/
 .idea/
