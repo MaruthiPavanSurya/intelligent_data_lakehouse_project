@@ -50,6 +50,8 @@ Instructions:
 - Use aggregate functions (SUM, COUNT, AVG) when appropriate
 - Add ORDER BY and LIMIT clauses for readability when listing data
 - Exclude metadata columns (_ingested_at, raw_data) from SELECT unless specifically requested
+- Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
+- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis and available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
 
 SQL Query:"""
         
