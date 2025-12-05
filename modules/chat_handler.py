@@ -50,8 +50,6 @@ Instructions:
 - Use aggregate functions (SUM, COUNT, AVG) when appropriate
 - Add ORDER BY and LIMIT clauses for readability when listing data
 - Exclude metadata columns (_ingested_at, raw_data) from SELECT unless specifically requested
-- Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
-- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis and available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
 
 SQL Query:"""
         
@@ -110,6 +108,9 @@ Requirements:
 - Store the figure in a variable called 'fig'
 - DO NOT call fig.show() - just create the figure
 - Return ONLY the code, no explanations
+- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
+- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
+
 
 Example:
 import plotly.express as px
@@ -142,6 +143,8 @@ Instructions:
 - If there are interesting patterns, point them out
 - Keep it concise but informative
 - Use markdown formatting for readability (bold for numbers, bullets for lists)
+- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
+- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
 {"- Mention that a visualization has been generated to help visualize the data" if chart_code else ""}
 
 Response:"""
