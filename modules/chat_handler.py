@@ -43,8 +43,8 @@ User Question: {user_question}
 
 Task: Generate a precise SQL query to answer the user's question.
 
-Instructions:
-- Return ONLY the SQL query, no explanations or markdown
+Instructions
+- If the question is about something other than Data Analysis or something not pretaining to available data, return an query to select nothing.
 - Use proper table and column names from the schema above
 - For multi-table queries, use appropriate JOINs based on common columns
 - Use aggregate functions (SUM, COUNT, AVG) when appropriate
@@ -101,6 +101,8 @@ First few rows:
 User question: {user_question}
 
 Requirements:
+- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
+- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot help with other topics/tasks.
 - Use plotly.express (import as px)
 - Assume data is in a DataFrame called 'data'
 - Create appropriate chart type (bar, line, scatter, pie, etc.)
@@ -108,9 +110,6 @@ Requirements:
 - Store the figure in a variable called 'fig'
 - DO NOT call fig.show() - just create the figure
 - Return ONLY the code, no explanations
-- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
-- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
-
 
 Example:
 import plotly.express as px
@@ -138,13 +137,13 @@ Query Results:
 Task: Provide a clear, conversational answer to the user's question based on the query results.
 
 Instructions:
-- Write in natural, friendly language
+- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
+- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
+- AlwaysWrite in natural, friendly language
 - Highlight key insights and numbers
 - If there are interesting patterns, point them out
 - Keep it concise but informative
 - Use markdown formatting for readability (bold for numbers, bullets for lists)
-- If the question is about something other than Data Analysis, Always try to steer the dialouge towards the Data Analysis of the available data, if the conversation is diverting to something else. 
-- whenever the user starts discussing something other than Data Analysis, politely decline delving into the topics not pertaining to Data Analysis of available data, mention you are Data Analysis assistant cannot provide the info regarding other topics.
 {"- Mention that a visualization has been generated to help visualize the data" if chart_code else ""}
 
 Response:"""
